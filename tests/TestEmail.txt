@@ -43,4 +43,16 @@ Content-Type: text/plain; charset=UTF-8
 
 Test reply with name Siôn Simon
 
+--001a1141c536e21f1a050940c73b
+Content-Type: text/html; charset=UTF-8
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=1">
+</head>
+<body>
+<p>Test reply with name Siôn Simon</p>
+</body>
+</html>
+
 --001a1141c536e21f1a050940c73b--

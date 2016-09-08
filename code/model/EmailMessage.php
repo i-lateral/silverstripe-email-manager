@@ -52,9 +52,6 @@ class EmailMessage extends DataObject implements PermissionProvider
     {
         $parser = $this->getParser();
         $return = $parser->getMessageBody();
-
-        Debug::show($return);
-
         return $return;
     }
 
