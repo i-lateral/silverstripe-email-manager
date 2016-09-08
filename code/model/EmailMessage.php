@@ -14,7 +14,9 @@ class EmailMessage extends DataObject implements PermissionProvider
     );
 
     private static $casting = array(
-        "Title" => "Varchar"
+        "Title" => "Varchar",
+        "Body" => "Text",
+        "HTMLBody" => "HTMLText"
     );
 
     private static $summary_fields = array(
@@ -37,9 +39,35 @@ class EmailMessage extends DataObject implements PermissionProvider
     public function getParser()
     {
         $parser = new PHPMimeParser();
-        $parser->setText($this->source);
-
+        $parser->setText($this->Source);
         return $parser;
+    }
+
+    /**
+     * Get the raw body of the email
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        $parser = $this->getParser();
+        $return = $parser->getMessageBody();
+
+        Debug::show($return);
+
+        return $return;
+    }
+
+    /**
+     * Get the HTML body of the email
+     *
+     * @return string
+     */
+    public function getHTMLBody()
+    {
+        $parser = $this->getParser();
+        $return = $parser->getMessageBody('html');
+        return $return;
     }
 
     /**
