@@ -1,0 +1,4 @@
+# Configuration settings
+LeftAndMain:
+  extra_requirements_css:
+    - email-manager/css/admin.css

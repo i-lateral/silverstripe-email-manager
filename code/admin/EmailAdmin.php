@@ -18,12 +18,18 @@ class EmailAdmin extends ModelAdmin {
 
     private static $model_importers = array();
     
-    public function getEditForm($id = null, $fields = null) {
+    public function getEditForm($id = null, $fields = null)
+    {
 		$form = parent::getEditForm($id, $fields);
 		
 		$class = $this->sanitiseClassName($this->modelClass);
-        $gridField = $form->Fields()->fieldByName($class);
+        $gridField = $form->Fields()->fieldByName($class);            
         $config = $gridField->getConfig();
+        
+        $config
+            ->removeComponentsByType("GridFieldExportButton")
+            ->removeComponentsByType("GridFieldPrintButton")
+            ->removeComponentsByType("GridFieldAddNewButton");
 		
 		return $form;
 	}
