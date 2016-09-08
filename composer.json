@@ -1,5 +1,5 @@
 {
-	"name": "i-lateral/email-manager",
+	"name": "i-lateral/silverstripe-email-manager",
 	"type": "silverstripe-module",
 	"description": "Silverstripe Module for importing and managing emails via the admin",
 	"license": "BSD-3-Clause",
