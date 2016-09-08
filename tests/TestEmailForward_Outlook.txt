@@ -1,0 +1,147 @@
+Delivered-To: reciever@ilateral.co.uk
+Received: by 10.202.189.10 with SMTP id n10csp1850825oif;
+        Thu, 29 Jan 2015 01:37:43 -0800 (PST)
+X-Received: by 10.180.74.114 with SMTP id s18mr2459521wiv.29.1422524262942;
+        Thu, 29 Jan 2015 01:37:42 -0800 (PST)
+Return-Path: <sender@ilateral.co.uk>
+Received: from mail-we0-x235.google.com (mail-we0-x235.google.com. [2a00:1450:400c:c03::235])
+        by mx.google.com with ESMTPS id c7si2058017wix.71.2015.01.29.01.37.42
+        for <reciever@ilateral.co.uk>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 29 Jan 2015 01:37:42 -0800 (PST)
+Received-SPF: pass (google.com: domain of sender@ilateral.co.uk designates 2a00:1450:400c:c03::235 as permitted sender) client-ip=2a00:1450:400c:c03::235;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of sender@ilateral.co.uk designates 2a00:1450:400c:c03::235 as permitted sender) smtp.mail=m.lewis.everley@gmail.com;
+       dkim=pass header.i=@gmail.com;
+       dmarc=pass (p=NONE dis=NONE) header.from=gmail.com
+Received: by mail-we0-f181.google.com with SMTP id k48so23012640wev.12
+        for <reciever@ilateral.co.uk>; Thu, 29 Jan 2015 01:37:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=message-id:date:from:user-agent:mime-version:to:subject:references
+         :in-reply-to:content-type;
+        bh=ySThS2QWpWob7KSDpRLmJm9egeR7w5KsQIzTWot0VR0=;
+        b=LWUMNvTr2gY4LSww/yhkOT9zyeGt0qwcCIl2TXNvmkHcWjJZP3aWUxtTFxj5V75Wd1
+         WXfrPmzR45TWmbOm0ow4iXjYkgLJWiIaaxweMJqFTGhHr+CWEyxs6LMMtgqi0gXLVglg
+         BRLZ1afdJjPq6xPNkJ5mA+ctaTtkaNX/MHpzUpYvBcJCjMEpa9tIFd2afFdfXHe2rFir
+         /JDRblr7guP1NaXo5VTWxtDM638rw+4bgGxqukFigIWGocMkANrEYW6hP1HQV6jDI8hl
+         0YYMjVEOXN25DzoOdtsRkhGcdQqMFAvE5y8GVE9GuSdKgw0IJ7tmmPxxosP7z5HHqyv5
+         9XSQ==
+X-Received: by 10.194.6.228 with SMTP id e4mr16935053wja.63.1422524262333;
+        Thu, 29 Jan 2015 01:37:42 -0800 (PST)
+Return-Path: <m.lewis.everley@gmail.com>
+Received: from [192.168.1.198] (79-76-115-44.dynamic.dsl.as9105.com. [79.76.115.44])
+        by mx.google.com with ESMTPSA id e11sm9672546wjx.1.2015.01.29.01.37.40
+        for <morven@i-lateral.com>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 29 Jan 2015 01:37:41 -0800 (PST)
+Message-ID: <54C9FF63.903@gmail.com>
+Date: Thu, 29 Jan 2015 09:37:39 +0000
+From: Sender <sender@ilateral.co.uk>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Thunderbird/24.6.0
+MIME-Version: 1.0
+To: Reciever <reciever@ilateral.co.uk>
+Subject: FW: Test Email
+References: <54C9FF45.6050608@i-lateral.com>
+In-Reply-To: <54C9FF45.6050608@i-lateral.com>
+X-Forwarded-Message-Id: <54C9FF45.6050608@i-lateral.com>
+Content-Type: multipart/alternative;
+ boundary="------------040408050301060106020007"
+
+This is a multi-part message in MIME format.
+--------------040408050301060106020007
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+This is a test forward, see below.
+
+
+-------- Original Message --------
+Subject: 	Test Email
+Date: 	Thu, 29 Jan 2015 09:37:09 +0000
+From: 	Origin [mailto:origin@ilateral.co.uk]
+Organisation: 	ilateral
+To: 	Sender [mailto:sender@ilateral.co.uk]
+
+
+
+This is a test
+
+
+-- 
+
+*Morven Lewis-Everley,*
+Founder and Technical Guy,
+ilateral
+
+*T:* 07826 141 816
+*W:* http://www.ilateral.co.uk/
+
+
+
+
+--------------040408050301060106020007
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    This is a test forward, see below.<br>
+    <div class="moz-forward-container"><br>
+      <br>
+      -------- Original Message --------
+      <table class="moz-email-headers-table" border="0" cellpadding="0"
+        cellspacing="0">
+        <tbody>
+          <tr>
+            <th align="RIGHT" nowrap="nowrap" valign="BASELINE">Subject:
+            </th>
+            <td>Test Email</td>
+          </tr>
+          <tr>
+            <th align="RIGHT" nowrap="nowrap" valign="BASELINE">Date: </th>
+            <td>Thu, 29 Jan 2015 09:37:09 +0000</td>
+          </tr>
+          <tr>
+            <th align="RIGHT" nowrap="nowrap" valign="BASELINE">From: </th>
+            <td>Morven Lewis-Everley <a class="moz-txt-link-rfc2396E" href="mailto:morven@i-lateral.com">&lt;morven@i-lateral.com&gt;</a></td>
+          </tr>
+          <tr>
+            <th align="RIGHT" nowrap="nowrap" valign="BASELINE">Organisation:
+            </th>
+            <td>ilateral</td>
+          </tr>
+          <tr>
+            <th align="RIGHT" nowrap="nowrap" valign="BASELINE">To: </th>
+            <td><a class="moz-txt-link-abbreviated" href="mailto:m.lewis.everley@gmail.com">m.lewis.everley@gmail.com</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <meta http-equiv="content-type" content="text/html;
+        charset=ISO-8859-1">
+      This is a test<br>
+      <br>
+      <br>
+      <div class="moz-signature">-- <br>
+        <p><strong>Morven Lewis-Everley,</strong><br>
+          Founder and Technical Guy,<br>
+          ilateral<br>
+          <br>
+          <strong>T:</strong> 07826 141 816<br>
+          <strong>W:</strong> <a moz-do-not-send="true"
+            class="moz-txt-link-freetext"
+            href="http://www.ilateral.co.uk/">http://www.ilateral.co.uk/</a></p>
+      </div>
+      <br>
+    </div>
+    <br>
+  </body>
+</html>
+
+--------------040408050301060106020007--

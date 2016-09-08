@@ -1,0 +1,20 @@
+{
+	"name": "i-lateral/email-manager",
+	"type": "silverstripe-module",
+	"description": "Silverstripe Module for importing and managing emails via the admin",
+	"license": "BSD-3-Clause",
+	"keywords": ["silverstripe", "email", "management"],
+	"authors": [
+		{
+			"name": "ilateral",
+			"homepage": "http://ilateralweb.com"
+		}
+	],
+	"require": {
+		 "silverstripe/framework": "~3.1",
+         "php-mime-mail-parser/php-mime-mail-parser": "2.4.*"
+	},
+	"extra": {
+		"installer-name": "email-manager"
+	}
+}
