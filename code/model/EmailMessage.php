@@ -25,6 +25,19 @@ class EmailMessage extends DataObject implements PermissionProvider
         "From"
     );
 
+    /**
+     * Return an array of email addresses from a provided string
+     * 
+     * @param $string A string that contains email addresses
+     * @return array
+     */
+    public static function get_emails_from_string($string)
+    {
+        $re = "/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})/i";
+        preg_match_all($re, $string, $matches);
+        return $matches;
+    }
+
     public function getTitle()
     {
         return $this->Subject . "<{$this->From}>";
