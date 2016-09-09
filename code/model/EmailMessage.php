@@ -115,14 +115,19 @@ class EmailMessage extends DataObject implements PermissionProvider
         );
 
         // Move the source of the email to a seperate tab
+        $source = new HTMLText("Source");
+        $source->setValue(nl2br($this->Source));
+
+
+        // Manually inject HTML for totals as Silverstripe refuses to render HTML
+        $field_html = '<div id="Source" class="field stacked readonly">';
+        $field_html .= '<div class="middleColumn"><span id="Form_ItemEditForm_Source" class="readonly">';
+        $field_html .= $source;
+        $field_html .= '</span></div></div>';
         
         $fields->addFieldToTab(
             "Root.Source",
-            TextareaField::create(
-                "Source",
-                ""
-            )->addExtraClass("stacked")
-            ->setRows(40)
+            LiteralField::create("Source",$field_html)
         );
 
         return $fields;
