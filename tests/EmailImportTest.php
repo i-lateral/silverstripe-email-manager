@@ -34,6 +34,17 @@ class EmailImportTest extends FunctionalTest
     /**
     * Test that after import we can get the email body
     */
+    public function testEmailFromString()
+    {
+        $email = $this->getParsedEmail();
+        $matches = EmailMessage::get_emails_from_string($email->From);
+        
+        $this->assertEquals("sender@ilateral.co.uk", $matches[0]);
+    }
+
+    /**
+    * Test that after import we can get the email body
+    */
     public function testEmailBody()
     {
         $email = $this->getParsedEmail();
