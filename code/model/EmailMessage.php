@@ -87,6 +87,23 @@ class EmailMessage extends DataObject implements PermissionProvider
         return $return;
     }
 
+    public function getCMSFields()
+    {
+        $fields = parent::getCMSFields();
+
+        // Move the source of the email to a seperate tab
+        $fields->addFieldToTab(
+            "Root.Source",
+            TextareaField::create(
+                "Source",
+                ""
+            )->addExtraClass("stacked")
+            ->setRows(40)
+        );
+
+        return $fields;
+    }
+
     /**
      * Create a new email message based on a provided string.
      * 
@@ -122,5 +139,66 @@ class EmailMessage extends DataObject implements PermissionProvider
                 'sort' => 10
             ),
         );
+    }
+
+    /**
+     * Only users with correct permissions can view
+     *
+     * @return Boolean
+     */
+    public function canView($member = false) {
+        if($member instanceof Member) {
+            $memberID = $member->ID;
+        } elseif(is_numeric($member)) {
+            $memberID = $member;
+        } else {
+            $memberID = Member::currentUserID();
+        }
+
+        if($memberID && Permission::checkMember($memberID, array("ADMIN", "MESSAGE_MANAGE"))) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Messages cannot be created via the web admin interface
+     *
+     * @return Boolean
+     */
+    public function canCreate($member = null) {
+        return false;
+    }
+
+    /**
+     * Messages cannot be edited via the web admin interface
+     * (they have been imported)
+     *
+     * @return Boolean
+     */
+    public function canEdit($member = null) {
+        return false;
+    }
+
+    /**
+     * Only users with correct permissions can delete
+     *
+     * @return Boolean
+     */
+    public function canDelete($member = null) {
+        if($member instanceof Member) {
+            $memberID = $member->ID;
+        } elseif(is_numeric($member)) {
+            $memberID = $member;
+        } else {
+            $memberID = Member::currentUserID();
+        }
+
+        if ($memberID && Permission::checkMember($memberID, array("ADMIN", "MESSAGE_MANAGE"))) {
+            return true;
+        }
+
+        return false;
     }
 }
