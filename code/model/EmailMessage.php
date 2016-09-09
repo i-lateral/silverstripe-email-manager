@@ -91,7 +91,31 @@ class EmailMessage extends DataObject implements PermissionProvider
     {
         $fields = parent::getCMSFields();
 
+        // Add email body
+        $body = new HTMLText("Body");
+        if ($this->HTMLBody) {
+            $body->setValue($this->HTMLBody);
+        } else {
+            $body->setValue(nl2br($this->Body));
+        }
+
+        // Manually inject HTML for totals as Silverstripe refuses to render HTML
+        $field_html = '<div id="Body" class="field readonly">';
+        $field_html .= '<label class="left" for="Form_ItemEditForm_Body">';
+        $field_html .= _t("EmailManager.EmailBody", "Body");
+        $field_html .= '</label>';
+        $field_html .= '<div class="middleColumn"><span id="Form_ItemEditForm_Body" class="readonly">';
+        $field_html .= $body;
+        $field_html .= '</span></div></div>';
+
+        $fields->addFieldToTab(
+            "Root.Main",
+            LiteralField::create("Body", $field_html),
+            "MessageID"
+        );
+
         // Move the source of the email to a seperate tab
+        
         $fields->addFieldToTab(
             "Root.Source",
             TextareaField::create(
