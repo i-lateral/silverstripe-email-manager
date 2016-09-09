@@ -10,19 +10,22 @@ class EmailMessage extends DataObject implements PermissionProvider
         "From" => "Varchar(255)",
         "Subject" => "Varchar(255)",
         "MessageID" => "Varchar(255)",
+        "Sent" => "SS_DateTime",
         "Source" => "Text"
     );
 
     private static $casting = array(
         "Title" => "Varchar",
         "Body" => "Text",
+        "BodySummary" => "Text",
         "HTMLBody" => "HTMLText"
     );
 
     private static $summary_fields = array(
-        "Subject",
-        "To",
-        "From"
+        "Subject" => "Subject",
+        "From" => "From",
+        "BodySummary" => "Summary",
+        "Sent" => "Sent"
     );
 
     /**
@@ -73,6 +76,18 @@ class EmailMessage extends DataObject implements PermissionProvider
         $parser = $this->getParser();
         $return = $parser->getMessageBody();
         return $return;
+    }
+
+    /**
+     * Get a short summary of the body text
+     *
+     * @return string
+     */
+    public function getBodySummary()
+    {
+        $return = new Text("BodySummary");
+        $return->setValue($this->Body);
+        return $return->Summary();
     }
 
     /**
@@ -152,6 +167,10 @@ class EmailMessage extends DataObject implements PermissionProvider
         $this->To = $parser->getHeader('to');
         $this->From = $parser->getHeader('from');
         $this->MessageID = $parser->getHeader('message-id');
+
+        // Convert the date
+        $date = DateTime::createFromFormat('D, d M Y H:i:s O', $parser->getHeader("date"));
+        $this->Sent = $date->format('Y-m-d H:i:s');
 
         $this->extend("onBeforeImport");
         

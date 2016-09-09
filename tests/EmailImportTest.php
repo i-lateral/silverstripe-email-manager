@@ -61,4 +61,17 @@ class EmailImportTest extends FunctionalTest
 
         $this->assertContains("<p>Test reply with name Siôn Simon</p>", $email->getHTMLBody());
     }
+
+    /**
+    * Test sent date is set correctly
+    */
+    public function testEmailSent()
+    {
+        $email = $this->getParsedEmail();
+        $date = $email->dbobject("Sent");
+
+        $this->assertEquals(2014, $date->Year());
+        $this->assertEquals("December", $date->Month());
+        $this->assertEquals(2, $date->DayOfMonth());
+    }
 }
