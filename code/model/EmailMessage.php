@@ -42,7 +42,7 @@ class EmailMessage extends DataObject implements PermissionProvider
 
         // Clean up the results into a simpler array
         foreach ($matches as $match) {
-            if (is_array($match)) {
+            if ($match && is_array($match)) {
                 $return[] = $match[0];
             }
         }
