@@ -40,9 +40,11 @@ class EmailMessage extends DataObject implements PermissionProvider
         $re = "/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})/i";
         preg_match_all($re, $string, $matches);
 
-        // Clean up the results intyo a simpler array
+        // Clean up the results into a simpler array
         foreach ($matches as $match) {
-            $return[] = $match[0];
+            if (is_array($match)) {
+                $return[] = $match[0];
+            }
         }
 
         return array_unique($return);
